@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>猫之家幻方实验</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="title">
+        <div class="hero-copy">
+          <p class="eyebrow">SGP CAT Magic Square Lab</p>
+          <h1 id="title">猫之家幻方实验</h1>
+          <p class="intro">
+            请输入一个大于 2 的阶数，程序会迅速构造多种有效的幻方填写方式，并把每一行、每一列、两条对角线的验证过程展示出来。
+          </p>
+        </div>
+
+        <form class="control-panel" id="magicForm">
+          <label class="number-field" for="orderInput">
+            <span>幻方阶数 n</span>
+            <input id="orderInput" type="number" min="3" max="99" value="3" inputmode="numeric" />
+          </label>
+          <button type="submit" class="primary-btn">生成幻方</button>
+          <button type="button" class="ghost-btn" id="randomBtn">随机灵感</button>
+        </form>
+      </section>
+
+      <section class="status-band" aria-live="polite">
+        <div>
+          <span class="metric-label">幻和</span>
+          <strong id="magicSum">15</strong>
+        </div>
+        <div>
+          <span class="metric-label">方案数</span>
+          <strong id="solutionCount">8</strong>
+        </div>
+        <div>
+          <span class="metric-label">构造法</span>
+          <strong id="methodName">奇数阶星跃法</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="solution-list" aria-label="幻方方案列表">
+          <div class="section-title">
+            <h2>SGP CAT 方案星轨</h2>
+            <p id="limitNote">展示 8 种有效方案</p>
+          </div>
+          <div class="tabs" id="solutionTabs"></div>
+        </aside>
+
+        <section class="display-stage" aria-labelledby="currentTitle">
+          <div class="stage-head">
+            <div>
+              <p class="eyebrow">Current Pattern</p>
+              <h2 id="currentTitle">方案 1</h2>
+            </div>
+            <button type="button" class="icon-btn" id="copyBtn" title="复制当前幻方" aria-label="复制当前幻方">⧉</button>
+          </div>
+          <div class="square-wrap">
+            <div class="magic-square" id="magicSquare"></div>
+          </div>
+          <div class="verification">
+            <div class="verify-head">
+              <h3>计算验证</h3>
+              <button type="button" class="lesson-btn" id="lessonBtn">详细讲解</button>
+            </div>
+            <div class="verify-grid" id="verificationGrid"></div>
+            <article class="lesson-panel" id="lessonPanel" hidden>
+              <div class="lesson-head">
+                <p class="eyebrow">Teacher Mode</p>
+                <h3 id="lessonTitle">详细讲解</h3>
+              </div>
+              <div id="lessonContent"></div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+    <script src="app.js"></script>
+  </body>
+</html>
