@@ -95,9 +95,7 @@ Uses the composite method: Divide into four quadrants filled with scaled odd-ord
 
 使用拼合法：分成四个象限，用缩放的奇数阶幻方填充，然后进行策略性的行/列交换。
 
-## 📱 Screenshots / 截图
-
-*(Add actual screenshots here when publishing to GitHub)* / *(发布到 GitHub 时在此添加实际截图)*
+## 📱 Key Features / 主要功能
 
 - Main interface with order input and control panel / 带有阶数输入和控制面板的主界面
 - Magic square grid with verification results / 带有验证结果的幻方网格
